@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Weather</title>
+  <meta name="description" content="Live weather and local time for cities around the world, with a 3D globe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="hero">
+      <span class="badge">Live · Worldwide</span>
+      <h1>World <span class="grad">Weather</span></h1>
+      <p class="sub">Search any city and watch its sky, temperature and local time in real time.</p>
+
+      <form id="weather-form" class="search" autocomplete="off">
+        <input id="location-input" type="text" placeholder="Search a city, e.g. Lahore" aria-label="City name" required />
+        <button type="submit">Add City</button>
+      </form>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </header>
+
+    <section id="weather-container" class="weather-container" aria-label="Your cities"></section>
+
+    <section class="preset-section">
+      <h3>Popular Cities</h3>
+      <div class="preset-buttons">
+        <button class="preset-btn" data-city="London,GB">London</button>
+        <button class="preset-btn" data-city="New York,US">New York</button>
+        <button class="preset-btn" data-city="Tokyo,JP">Tokyo</button>
+        <button class="preset-btn" data-city="Sydney,AU">Sydney</button>
+        <button class="preset-btn" data-city="Dubai,AE">Dubai</button>
+        <button class="preset-btn" data-city="Paris,FR">Paris</button>
+        <button class="preset-btn" data-city="Lahore,PK">Lahore</button>
+        <button class="preset-btn" data-city="Karachi,PK">Karachi</button>
+        <button class="preset-btn" data-city="Islamabad,PK">Islamabad</button>
+        <button class="preset-btn" data-city="Faisalabad,PK">Faisalabad</button>
+        <button class="preset-btn" data-city="Nankana Sahib,PK">Nankana Sahib</button>
+        <button class="preset-btn" data-city="Gojra,PK">Gojra</button>
+        <button class="preset-btn" data-city="Rawalpindi,PK">Rawalpindi</button>
+        <button class="preset-btn" data-city="Peshawar,PK">Peshawar</button>
+        <button class="preset-btn" data-city="Quetta,PK">Quetta</button>
+        <button class="preset-btn" data-city="Multan,PK">Multan</button>
+      </div>
+    </section>
+
+    <footer class="foot">Built by Hira Sarwar · Data from OpenWeatherMap</footer>
+  </main>
+
+  <script src="config.js" onerror="void 0"></script>
+  <script src="vendor/three.min.js"></script>
+  <script src="scene.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
